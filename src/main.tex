@@ -4,9 +4,10 @@
 \usepackage{helvet}
 
 \title{\fontfamily{phv}\selectfont MAT2. Algebre lineaire.}
-\author{ISTIC - Universite de Rennes 1, \textit{Hiver 2023}}
-\date{Winter 2023}
+\author{Videcoq Lucas \\ ISTIC - Universite de Rennes 1, \textit{\thedate}}
+\date{Hiver 2023}
 \version{1.0}
+
 
 \begin{document}
 
@@ -20,7 +21,7 @@
             au chapitre 1 du cour de MAT2 sur l'Algebre lineaire. \\
             Cet exercice a faire a la maison est a rendre pour le 07/02/2023.\\
             Ce document est entierement redige en LaTeX. \\
-            Le code source est disponible a l'adresse suivante: \url{}
+            Le code source est disponible a l'adresse suivante: \url{https://github.com/Jaggernaute/Maths2}
         \end{abstract}
         \vspace{5em}
         \center\includegraphics{images/univ-logo}
@@ -33,28 +34,141 @@
 
         \begin{contributors}
             \vspace{.25em}
-            Redaction: \textbf{Jaggernaute} \\
-            Course given by: \textbf{Prof. Felix Ulmer} \\
-            Book: \textbf{Otto Bretscher}, Linear Algebra with applications,
+            Redaction : \textbf{Lucas Videcoq} \\
+            Cours dispense par : \textbf{Prof. Felix Ulmer} \\
+            Bibliographie : \textbf{Otto Bretscher}, Linear Algebra with applications,
             3rd edition \\
-            Assignments given by: \textbf{Prof. Anne Virrion} \\
+            Travaux diriges : \textbf{Prof. Anne Virrion} \\
             \vspace{.25em}
         \end{contributors}
 
     \end{titlepage}
 
-    \section{Chapter1. Linear equations}\label{sec:section}
+    \section{Ex: 42 - Les systèmes dits homogènes}\label{sec:section}
 
-    \subsection{Introduction to linear systems}\label{subsec:subsection}
+    \subsection{a - Les systèmes homogènes sont consistants}\label{subsec:a}
+    Sont touts les systèmes homogènes consistants? \\
 
-    \subsection{Gaussian elimination}\label{subsec:gaussian-elimination}
+    Un systeme est dit inconsistent si sa matrice est de rang inferieur a son nombre de lignes, ou
+    si sa formne reduite echelonnee est de la forme:
+    \[
+        \left[
+            \begin{array}{rrrr|r}
+                1 & 0 & \cdots & 0 & b_{1} \\
+                0 & 0 & \cdots & 0 & b_{2} \\
+                \vdots & \vdots & \ddots & \vdots & \vdots \\
+                0 & 0 & \cdots & 0 & b_{n}
+            \end{array}
+            \right]
+    \]
+    avec $b_i \in \mathbb{R}$ et $b_i \neq 0$ pour tout $i \in \{1, \cdots, n\}$.\\
+    Ici nous sommes face a un systeme homogene de la forme $A\vec{x}=\vec{0}$ , donc nous avons $b_i = 0$
+    pour tout $i \in \{1, \cdots, n\}$, et donc le systeme est consistent, puisque sa matrice est de rang 1,
+    et sa forme reduite echelonnee est de la forme:
+    \[
+        \left[
+            \begin{array}{rrrrr|r}
+                1 & 0 & \cdots & 0 & 0 & 0 \\
+                0 & 0 & \cdots & 0 & 0 & 0 \\
+                \vdots & \vdots & \ddots & \vdots & \vdots & \vdots \\
+                0 & 0 & \cdots & 0 & 0 & 0
+            \end{array}
+        \right]
+    \]
+    \noindent\fbox{%
+        Donc tous les systemes homogenes sont consistants.
+    }
+    \\ \\
+    Exemple:\\
+    Soit le systeme homogene suivant:
+    \[
+        \begin{cases}
+            x_1 + 2x_2 + 3x_3 = 0 \\
+            2x_1 + 4x_2 + 6x_3 = 0 \\
+            3x_1 + 6x_2 + 9x_3 = 0
+        \end{cases}
+    \]
+    \[
+        \left[
+            \begin{array}{rrr|r}
+                1 & 2 & 3 & 0 \\
+                2 & 4 & 6 & 0 \\
+                3 & 6 & 9 & 0
+            \end{array}
+        \right]
+    \]
+
+    En utilisant l'algorithme de Gauss et en eliminant la premiere colonne on obtient la matrice echelonnee reduite suivante:
+
+    \[
+        \left[
+        \begin{array}{rrr|r}
+                1 & 2 & 3 & 0 \\
+                0 & 0 & 0 & 0 \\
+                0 & 0 & 0 & 0
+        \end{array}
+        \right]
+    \]
+
+    \noindent\fbox{%
+        On peu en deduire ce systeme est donc consistent.
+    }
+
 
     \newpage
 
-    \decoratedsection{A Special Section}
+    \subsection{b - Les systèmes homogènes avec moins d’équations que d’inconnues.}\label{subsec:b}
+    Un systeme homogene avec moins d'equations que d'inconnues possede t'il une infinite solution? \\
 
-    \subsection{Subsection}\label{subsec:subsection2}
+    Un systeme homogene avec strictement moins d'equations que d'inconnues possede une infinite une infinité de
+    n-uplets solutions, car il est possible de trouver un vecteur
+    $\vec{x}$ tel que $A\vec{x} = \vec{0}$, et donc $\vec{x}$
+    est une solution du systeme.\\
 
-    Text.
+    Exemple:\\
+    Soit le systeme homogene suivant:
+    \[
+        \begin{cases}
+            x_1 + 2x_2 + 3x_3 = 0 \\
+            2x_1 + 4x_2 + 6x_3 = 0
+        \end{cases}
+    \]
+    \[
+        \left[
+            \begin{array}{rrr|r}
+                1 & 2 & 3 & 0 \\
+                2 & 4 & 6 & 0
+            \end{array}
+        \right]
+    \]
+
+    En utilisant l'algorithme de Gauss et en eliminant la premiere colonne
+    on obtient la matrice echelonnee reduite suivante:
+
+\[
+        \left[
+        \begin{array}{rrr|r}
+                1 & 2 & 3 & 0 \\
+                0 & 0 & 0 & 0
+        \end{array}
+        \right]
+    \]
+
+    \noindent\fbox{%
+        On peu en deduire ce systeme est donc consistent.
+    }
+    \newpage
+
+
+    \subsection{c - Solutions d'un système homogène de la forme $\vec{x_1} + \vec{x_2}$}\label{subsec:c}
+
+    \newpage
+
+
+    \subsection{d - Solutions d'un système homogène de la forme $k\vec{x}$}\label{subsec:d}
+
+    \newpage
+
+
 
 \end{document}

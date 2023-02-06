@@ -90,7 +90,7 @@
 \lfoot{}
 \lfoot{}
 \cfoot{}
-\lfoot{{\headertext Made by Jaggernaute \hspace{.5em}| \hspace{.5em} \thedate}}
+\lfoot{{\headertext Fait par Videcoq Lucas \hspace{.5em}| \hspace{.5em} \thedate}}
 \rfoot{{\headertext\thepage}}
 \renewcommand{\headrulewidth}{0.4pt}
 \renewcommand{\footrulewidth}{0pt}
@@ -110,7 +110,7 @@
     \chead{}
     \lhead{}
     \rhead{}
-    \lfoot{{\headertext Made by Jaggernaute \hspace{.5em}| \hspace{.5em} \thedate}}
+    \lfoot{{\headertext Fait par Videcoq Lucas \hspace{.5em}| \hspace{.5em} \thedate}}
     \cfoot{}
     \rfoot{}
     \renewcommand{\headrulewidth}{0pt}
@@ -167,19 +167,11 @@
 % \titleformat{\section}{\Large\sffamily}{\thesection.}{.5em}{}
 % \titleformat{\subsection}{\large\sffamily}{\thesubsection.}{.5em}{}
 
-% Table of Contents
-\newcommand{\toccolor}{\color{mgggdarkblue}}
-\renewcommand{\cfttoctitlefont}{\Large\sffamily}
-% \renewcommand{\cftchapfont}{\sffamily\toccolor}
-% \renewcommand{\cftchappagefont}{\sffamily\toccolor}
-\renewcommand{\cftsecfont}{\sffamily\toccolor}
-\renewcommand{\cftsubsecfont}{\sffamily\toccolor}
-\renewcommand{\cftsubsubsecfont}{\sffamily\toccolor}
-\renewcommand{\cftsecpagefont}{\sffamily\toccolor}
-\renewcommand{\cftsubsecpagefont}{\sffamily\toccolor}
-\renewcommand{\cftsubsubsecpagefont}{\sffamily\toccolor}
-\setlength{\cftaftertoctitleskip}{1em}
-\setlength{\cftbeforetoctitleskip}{1.5em}
+% Table of contents
+% customise the table of contents style and title
+\setcounter{tocdepth}{3}
+\renewcommand{\cftsecfont}{\sffamily\color{mgggdarkblue}}
+\renewcommand{\cftsecpagefont}{\sffamily\color{mgggdarkblue}}
 
 % Line spacing
 \setlength{\parskip}{0.5em}
@@ -241,7 +233,7 @@
 \newenvironment{contributors}{%
     \vskip 1em
     \begin{mdframed}[style=abstract]
-    {\sffamily\Large Contributors}
+    {\sffamily\Large Avec la contribution de :}
         \par\noindent\ignorespaces
         }{\ignorespacesafterend\end{mdframed}
 }

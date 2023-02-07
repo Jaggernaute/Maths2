@@ -4,8 +4,8 @@
 \usepackage{helvet}
 
 \title{\fontfamily{phv}\selectfont MAT2. Algebre lineaire.}
-\author{Videcoq Lucas \\ ISTIC - Universite de Rennes 1, \textit{\thedate}}
 \date{Hiver 2023}
+\author{Videcoq Lucas \\ ISTIC - Universite de Rennes 1, \textit{\thedate}}
 \version{1.0}
 
 
@@ -155,18 +155,72 @@
     \]
 
     \noindent\fbox{%
-        On peu en deduire ce systeme est donc consistent.
+        On peu en deduire ce systeme possede une infinité de solutions.
     }
     \newpage
 
 
-    \subsection{c - Solutions d'un système homogène de la forme $\vec{x_1} + \vec{x_2}$}\label{subsec:c}
+    \subsection{c - Solutions d'un système homogène de la forme $A\vec{x} = \vec{0}$}\label{subsec:c}
+    Si $\vec{x_1}$ et $\vec{x_2}$ sont deux vecteurs solutions d'un systeme homogene de la forme
+    $A\vec{x} = \vec{0}$,
+    alors $\vec{x_1} + \vec{x_2}$ est-il une solution de ce systeme?\\
+
+    Soit $\vec{x_1}$ et $\vec{x_2}$ deux vecteurs solutions d'un systeme homogene de la forme
+    $A\vec{x} = \vec{0}$, alors $\vec{x_1} + \vec{x_2}$ est une solution de ce systeme, car:
+
+    \[
+        \begin{cases}
+            A(\vec{x_1} + \vec{x_2}) = A\vec{x_1} + A\vec{x_2} = \vec{0} + \vec{0} = \vec{0}
+        \end{cases}
+    \]
+
+    Sa matrice est de rang 1, et sa forme reduite echelonnee est de la forme:
+    \[
+        \left[
+            \begin{array}{rrrrr|r}
+                1 & 0 & \cdots & 0 & 0 & 0 \\
+                0 & 0 & \cdots & 0 & 0 & 0 \\
+                \vdots & \vdots & \ddots & \vdots & \vdots & \vdots \\
+                0 & 0 & \cdots & 0 & 0 & 0
+            \end{array}
+        \right]
+    \]
+
+    \noindent\fbox{%
+        Donc $\vec{x_1} + \vec{x_2}$ est une solution de ce systeme.
+    }
 
     \newpage
 
+    \subsection{d - Solutions d'un système homogène de la forme $k\vec{x} = \vec{0}$}\label{subsec:d}
+    Si $\vec{x}$ est une solution d'un systeme homogene de la forme $A\vec{x} = \vec{0}$, alors $k\vec{x}$
+    est-il une solution de ce systeme?\\
 
-    \subsection{d - Solutions d'un système homogène de la forme $k\vec{x}$}\label{subsec:d}
+    Soit $\vec{x}$ une solution d'un systeme homogene de la forme $A\vec{x} = \vec{0}$, alors $k\vec{x}$
+    est une solution de ce systeme, car:
 
+    \[
+        \begin{cases}
+            A(k\vec{x}) = kA\vec{x} = k\vec{0} = \vec{0}
+        \end{cases}
+    \]
+
+    Sa matrice est de rang 1, et sa forme reduite echelonnee est de la forme:
+
+    \[
+        \left[
+            \begin{array}{rrrrr|r}
+                1 & 0 & \cdots & 0 & 0 & 0 \\
+                0 & 0 & \cdots & 0 & 0 & 0 \\
+                \vdots & \vdots & \ddots & \vdots & \vdots & \vdots \\
+                0 & 0 & \cdots & 0 & 0 & 0
+            \end{array}
+        \right]
+    \]
+
+    \noindent\fbox{%
+        Donc $k\vec{x}$ est une solution de ce systeme.
+    }
     \newpage
 
 
